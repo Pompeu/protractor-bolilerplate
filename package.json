@@ -1,0 +1,27 @@
+{
+  "name": "protractor-bolilerplate",
+  "version": "0.0.1",
+  "description": "boiler plate protractor",
+  "main": "conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pompeu/protractor-bolilerplate.git"
+  },
+  "keywords": [
+    "angular",
+    "test",
+    "protractor"
+  ],
+  "author": "Itacir Ferreira Pompeu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pompeu/protractor-bolilerplate/issues"
+  },
+  "homepage": "https://github.com/Pompeu/protractor-bolilerplate#readme",
+  "devDependencies": {
+    "protractor": "^3.3.0"
+  }
+}
