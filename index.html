@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css" >
+    <title>Angular</title>
+  </head>
+  <body ng-app="app">
+    <form ng-controller="FormController as vm" name="loginForm">
+       <md-content layout-padding>
+         <div>
+           <md-input-container>
+             <label>Email</label>
+             <input ng-model="vm.email" type="email" name="email" required>
+             <div ng-messages="formLogin.email.$error">
+               <div class="invalid-email" ng-message="required">email requerido</div>
+             </div>
+           </md-input-container>
+           <md-input-container>
+             <label>Password</label>
+             <input ng-model="vm.password" type="password" name="password" required>
+             <div ng-messages="formLogin.password.$error">
+               <div class="invalid-pass" ng-message="required">password requerido</div>
+             </div>
+           </md-input-container>
+           <md-button class="md-raised md-primary" 
+              ng-click="vm.login(vm.email, vm.password)">
+              Click
+           </md-button>
+       </md-content>
+    </form>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-material/angular-material.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    angular.module('app',  ['ngMaterial'])
+      .controller('FormController', function ($mdToast) {
+        var vm = this;
+        vm.login = function (email,  password) {
+          if (password === '12345678' && email === 'itacir@hotmail.com') {
+            return $mdToast.show(
+                $mdToast.simple()
+                .content('logado com sucesso')
+                .position('bottom right')
+                .hideDelay(0));
+           }
+          return vm.response = 'login error plz try again!!!';
+        };
+    });
+  </script>
+  </body>
+</html>
