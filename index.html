@@ -47,7 +47,11 @@
                 .position('bottom right')
                 .hideDelay(0));
            }
-          return vm.response = 'login error plz try again!!!';
+            return $mdToast.show(
+                $mdToast.simple()
+                .content('falha ao logar')
+                .position('bottom right')
+                .hideDelay(0));
         };
     });
   </script>

@@ -20,6 +20,11 @@ describe('Login', function() {
     element(by.model('vm.email')).sendKeys('itacir.com');
     element(by.model('vm.password')).sendKeys(12345678);
     element(by.css('.md-button')).click();
+    const saveAlert = element(by.css('md-toast'));
+    browser.wait(function(){
+      return browser.isElementPresent(saveAlert);
+    });
+    expect(saveAlert.getText()).toEqual('falha ao logar');
     expect(element(by.css('.invalid-email')).getText())
       .toEqual('email requerido');
   });
